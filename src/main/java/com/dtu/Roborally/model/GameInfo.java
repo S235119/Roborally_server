@@ -23,8 +23,7 @@ public class GameInfo {
 
     private String board;
 
-
-    // @OneToMany
-    // private List<Player> players;
+    @OneToMany
+    private List<Player> players;
 
 }
