@@ -26,16 +26,4 @@ public class GameInfo {
     @OneToMany(mappedBy = "gameInfo")
     private List<Player> players;
 
-    // Method to add a player by ID
-    public boolean addPlayer(int playerID) {
-        if (this.players == null) {
-            this.players = new ArrayList<>();
-            return false;
-        }
-        Player player = new Player();
-        player.setPlayerID(playerID);
-        this.players.add(player); // Add the player to the list
-        return true;
-    }
-
 }

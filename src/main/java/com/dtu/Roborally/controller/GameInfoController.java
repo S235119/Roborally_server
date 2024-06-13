@@ -1,6 +1,7 @@
 package com.dtu.Roborally.controller;
 
 import com.dtu.Roborally.model.GameInfo;
+import com.dtu.Roborally.model.Player;
 import com.dtu.Roborally.repository.GameInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,11 +23,12 @@ public class GameInfoController {
     }
 
 
-@PostMapping
-    public boolean addPlayerByPlayerID(GameInfo gameInfo){
+    @PostMapping
+    public boolean addGame(@RequestBody GameInfo gameInfo) {
         gameInfoRepository.save(gameInfo);
         return true;
     }
+
 
 
 
