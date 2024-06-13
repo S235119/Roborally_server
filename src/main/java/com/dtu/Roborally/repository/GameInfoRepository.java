@@ -8,27 +8,23 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface GameInfoRepository extends JpaRepository<GameInfo, Long> {
 
     public GameInfo findByGameID(int gameID);
 
-    //Fungerer ikke endnu
-    //public int getTurnID(int turnID);
+    public int getTurnIDByGameID(int gameID);
+
+    public String getBoardByGameID(int gameID);
 
     //Fungerer ikke endnu
-    //public String findBoard(int gameID);
+    //public boolean addGame(GameInfo gameInfo);
 
     //Fungerer ikke endnu
-    //@Modifying
-    //public void updateProgram(int playerID, String program);
+    //public Player getPlayerByPlayerID(int playerID);
 
-    //Fungerer ikke endnu
-    //public GameInfo setPlayerProgram(int playerID, int gameID);
-
-    //Fungerer ikke endnu
-    //public GameInfo addNewGame(int gameID, String board);
-
-    //Fungerer ikke endnu
-    //public void addPlayer(int playerID, int gameID);
+    @Query("SELECT p FROM Player p WHERE p.playerID = :playerID AND p.gameInfo.gameID = :gameID")
+    Player getPlayerByPlayerIDAndGameID(@Param("playerID") int playerID, @Param("gameID") int gameID);
 
 }

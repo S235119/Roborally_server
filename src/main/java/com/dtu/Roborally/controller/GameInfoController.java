@@ -21,7 +21,12 @@ public class GameInfoController {
         this.gameInfoRepository = gameInfoRepository;
     }
 
-    private GameInfo gameInfo;
+
+@PostMapping
+    public boolean addPlayerByPlayerID(GameInfo gameInfo){
+        gameInfoRepository.save(gameInfo);
+        return true;
+    }
 
 
 
