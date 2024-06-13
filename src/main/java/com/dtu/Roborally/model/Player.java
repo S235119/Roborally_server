@@ -2,6 +2,7 @@ package com.dtu.Roborally.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +20,8 @@ public class Player {
     private String program4;
     private String program5;
 
+    @ManyToOne
+    private GameInfo gameInfo;
 
 
 }

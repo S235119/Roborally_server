@@ -10,13 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-
 @RequestMapping("/gameInfos")
 public class GameInfoController {
 
     private GameInfoRepository gameInfoRepository;
 
-    public GameInfoController(GameInfoRepository gameInfoRepository) {this.gameInfoRepository = gameInfoRepository;}
+    @Autowired
+    public GameInfoController(GameInfoRepository gameInfoRepository) {
+        this.gameInfoRepository = gameInfoRepository;
+    }
 
     private GameInfo gameInfo;
 

@@ -23,7 +23,7 @@ public class GameInfo {
 
     private String board;
 
-    @OneToMany
+    @OneToMany(mappedBy = "gameInfo")
     private List<Player> players;
 
 }
