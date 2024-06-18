@@ -24,9 +24,9 @@ public class GameInfoController {
 
 
     @PostMapping
-    public boolean addGame(@RequestBody GameInfo gameInfo) {
-        gameInfoRepository.save(gameInfo);
-        return true;
+    public ResponseEntity<GameInfo> addGame(@RequestBody GameInfo gameInfo) {
+        GameInfo newGameInfo = gameInfoRepository.save(gameInfo);
+        return ResponseEntity.ok().body(newGameInfo);
     }
 
     @GetMapping("/{id}")
