@@ -29,8 +29,9 @@ public class GameInfoController {
         return true;
     }
 
-
-
-
-
+    @GetMapping("/{id}")
+    public ResponseEntity<GameInfo> getByGameID(@PathVariable("id") int gameID){
+        GameInfo p = gameInfoRepository.getByGameID(gameID);
+        return ResponseEntity.ok().body(p);
+    }
 }
