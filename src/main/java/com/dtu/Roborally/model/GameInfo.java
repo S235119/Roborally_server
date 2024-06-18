@@ -17,7 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 public class GameInfo {
     @Id
-    private int gameID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private int turnID;
 

@@ -12,9 +12,9 @@ import java.util.List;
 
 public interface GameInfoRepository extends JpaRepository<GameInfo, Long> {
 
-    public GameInfo getByGameID(int gameID);
+    public GameInfo getGameInfoById(Long id);
 
-    @Query("SELECT p FROM Player p WHERE p.playerID = :playerID AND p.gameInfo.gameID = :gameID")
+    /*@Query("SELECT p FROM Player p WHERE p.playerID = :playerID AND p.gameInfo.gameID = :gameID")
     Player getPlayerByPlayerIDAndGameID(@Param("playerID") String playerID, @Param("gameID") int gameID);
-
+*/
 }

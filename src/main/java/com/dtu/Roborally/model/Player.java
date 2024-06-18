@@ -1,9 +1,6 @@
 package com.dtu.Roborally.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +15,10 @@ import lombok.Setter;
 public class Player {
 
     @Id
-    private String playerID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    private String playerName;
     private String program1;
     private String program2;
     private String program3;
