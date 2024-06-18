@@ -23,6 +23,8 @@ public class GameInfo {
 
     private String board;
 
+    private enum phase {WAITING, PROGRAMMING, EXECUTION}
+
     @OneToMany(mappedBy = "gameInfo")
     private List<Player> players;
 
