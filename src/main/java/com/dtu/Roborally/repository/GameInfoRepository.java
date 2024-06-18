@@ -15,6 +15,6 @@ public interface GameInfoRepository extends JpaRepository<GameInfo, Long> {
     public GameInfo getByGameID(int gameID);
 
     @Query("SELECT p FROM Player p WHERE p.playerID = :playerID AND p.gameInfo.gameID = :gameID")
-    Player getPlayerByPlayerIDAndGameID(@Param("playerID") int playerID, @Param("gameID") int gameID);
+    Player getPlayerByPlayerIDAndGameID(@Param("playerID") String playerID, @Param("gameID") int gameID);
 
 }

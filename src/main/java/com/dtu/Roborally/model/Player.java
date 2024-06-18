@@ -18,7 +18,7 @@ import lombok.Setter;
 public class Player {
 
     @Id
-    private int playerID;
+    private String playerID;
 
     private String program1;
     private String program2;
