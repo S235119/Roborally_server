@@ -26,6 +26,8 @@ public class GameInfo {
 
     private enum phase {WAITING, PROGRAMMING, EXECUTION}
 
+    private phase phase;
+
     @OneToMany(mappedBy = "gameInfo")
     private List<Player> players;
 
