@@ -24,6 +24,7 @@ public class Player {
     private String program3;
     private String program4;
     private String program5;
+    private boolean programmingDone;
 
     @ManyToOne
     private GameInfo gameInfo;
