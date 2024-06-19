@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -33,5 +34,23 @@ public class GameInfoController {
     public ResponseEntity<GameInfo> getGameInfoById(@PathVariable("id") Long id){
         GameInfo p = gameInfoRepository.getGameInfoById(id);
         return ResponseEntity.ok().body(p);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateGameInfo(@PathVariable("id") Long id, @RequestBody GameInfo gameInfo) {
+        Optional<GameInfo> existingGameInfo = gameInfoRepository.findById(id);
+        if (existingGameInfo.isPresent()) {
+            // Update the existing player with new values
+            GameInfo updatedGameInfo = existingGameInfo.get();
+            updatedGameInfo.setPlayers(gameInfo.getPlayers());
+            updatedGameInfo.setPhase(gameInfo.getPhase());
+
+            // Save the updated player
+            gameInfoRepository.save(updatedGameInfo);
+            return ResponseEntity.ok().body("Player updated successfully");
+        } else {
+            return ResponseEntity.notFound().build();
+
+        }
     }
 }

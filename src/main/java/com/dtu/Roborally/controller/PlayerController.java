@@ -39,6 +39,7 @@ public class PlayerController {
             updatedPlayer.setProgram3(p.getProgram3());
             updatedPlayer.setProgram4(p.getProgram4());
             updatedPlayer.setProgram5(p.getProgram5());
+            updatedPlayer.setProgrammingDone(p.isProgrammingDone());
 
             // Save the updated player
             playerRepository.save(updatedPlayer);
