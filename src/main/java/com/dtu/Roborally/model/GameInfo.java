@@ -1,5 +1,6 @@
 package com.dtu.Roborally.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,7 @@ public class GameInfo {
     private phase phase;
 
     @OneToMany(mappedBy = "gameInfo")
+    @JsonManagedReference
     private List<Player> players;
 
 }
