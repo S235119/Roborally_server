@@ -7,6 +7,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * @author Amalie Bojsen, s235119@dtu.dk, Rebecca Moss, s225042@dtu.dk
+ * Creates the database player, with the given attributes
+ */
 @Entity
 @Table(name = "player")
 @Getter

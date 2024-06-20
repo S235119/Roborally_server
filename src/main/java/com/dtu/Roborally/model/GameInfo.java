@@ -10,6 +10,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Amalie Bojsen, s235119@dtu.dk, Rebecca Moss, s225042@dtu.dk
+ * Creates the database gameInfo, with the given attributes
+ */
 @Entity
 @Table(name = "gameInfo")
 @Getter

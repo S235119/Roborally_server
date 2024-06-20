@@ -21,12 +21,22 @@ public class PlayerController {
         this.playerRepository = playerRepository;
     }
 
+    /**
+     * @author Amalie Bojsen, s235119@dtu.dk, Rebecca Moss, s225042@dtu.dk
+     * @param player
+     * Adds a player to the database
+     */
     @PostMapping
     public boolean addPlayer(@RequestBody Player player){
         playerRepository.save(player);
         return true;
     }
 
+    /**
+     * @author Amalie Bojsen, s235119@dtu.dk, Rebecca Moss, s225042@dtu.dk
+     * @param id, p
+     * Updates an existing player with the given ID
+     */
     @PutMapping("/{id}")
     public ResponseEntity<String> updatePlayer(@PathVariable("id") Long id, @RequestBody Player p) {
         Optional<Player> existingPlayer = playerRepository.findById(id);
